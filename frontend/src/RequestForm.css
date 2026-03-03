@@ -1,0 +1,107 @@
+/* RequestForm styles — matching existing app theme */
+.upload-input {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  max-width: 720px;
+  margin: 20px auto;
+}
+
+.upload-input .input-label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.text-input, .select-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  box-sizing: border-box;
+  background: #fff;
+  color: #333;
+}
+
+.text-input:focus, .select-input:focus {
+  outline: none;
+  border-color: #91d5ff;
+  box-shadow: 0 0 0 3px rgba(24,144,255,0.08);
+}
+
+.dropzone {
+  border: 2px dashed #e6e6e6;
+  padding: 14px;
+  border-radius: 8px;
+  text-align: center;
+  color: #666;
+  cursor: pointer;
+}
+
+.dropzone input[type="file"] {
+  width: 100%;
+}
+
+.file-preview {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  background: #fafafa;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+}
+
+.file-remove {
+  background: transparent;
+  border: none;
+  color: #ff4d4f;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.upload-progress {
+  height: 8px;
+  background: #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+.upload-progress span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg,#1890ff,#40a9ff);
+  width: 0%;
+  transition: width 0.2s ease;
+}
+
+.primary-btn {
+  background-color: #1890ff;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn.secondary {
+  background: #fafafa;
+  border: 1px solid #d9d9d9;
+  color: #333;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .upload-input { padding: 14px; margin: 12px; }
+  .header-search input { width: 100%; }
+}

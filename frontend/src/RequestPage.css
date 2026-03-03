@@ -1,0 +1,15 @@
+/* Request page styles (container + auth-card) */
+.auth-card {
+  max-width: 900px;
+  margin: 30px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.btn.secondary {
+  background: #fafafa;
+  border: 1px solid #d9d9d9;
+  color: #333;
+}

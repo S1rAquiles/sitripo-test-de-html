@@ -1,0 +1,160 @@
+/* Admin dashboard styles - professional layout */
+.auth-card {
+  max-width: 1100px;
+  margin: 28px auto;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  padding: 22px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.08);
+  border: 1px solid rgba(16,24,40,0.04);
+}
+
+.admin-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.auth-title {
+  margin: 0;
+  color: #0f172a;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.auth-sub {
+  margin: 0;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.admin-actions-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.stat-card {
+  background: white;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(2,6,23,0.03);
+}
+.stat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  background: linear-gradient(135deg,#e6f0ff,#d9f0ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+.stat-info h3 { margin: 0; font-size: 1.2rem; color: #0f172a; }
+.stat-info p { margin: 0; color: #64748b; font-size: 0.9rem; }
+
+.admin-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 18px;
+}
+
+/* Container with aside + main so admin uses entire width */
+.admin-container {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 12px 12px 0 12px;
+  width: 100%;
+  height: 100vh; /* occupy full viewport height */
+}
+
+.admin-sidebar {
+  background: #071029;
+  color: #fff;
+  border-radius: 10px;
+  padding: 18px;
+  min-height: calc(100vh - 36px);
+  position: sticky;
+  top: 18px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+}
+
+.admin-sidebar .logo { font-weight: 800; font-size: 1.1rem; background:#0ea5e9;padding:8px;border-radius:8px;display:inline-block }
+.admin-nav { margin-top: 16px; display:flex; flex-direction: column; gap:8px }
+.admin-nav button { text-align:left; background: transparent; border: none; color: #cbd5e1; padding:10px; border-radius:8px; cursor:pointer }
+.admin-nav button:hover { background: rgba(255,255,255,0.03); color: #fff }
+
+.admin-main-area { width:100%; display:flex; flex-direction:column; height:100%; }
+
+/* Make the content take the full available width/height inside admin (no centered card) */
+.admin-main-area .auth-card {
+  max-width: none;
+  margin: 0; /* remove auto centering */
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* fill vertical space */
+}
+
+/* Make main content area expand so panels/tables can grow */
+.admin-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 18px;
+  flex: 1;
+  align-items: stretch;
+}
+
+.admin-table { display: flex; flex-direction: column; height: 100%; }
+.admin-table table { width: 100%; border-collapse: collapse; flex: 1; overflow: auto; display: block; }
+.admin-table tbody { display: block; max-height: calc(100% - 56px); overflow: auto; }
+.admin-table thead { display: table; width: 100%; table-layout: fixed; }
+.admin-table tbody tr { display: table; width: 100%; table-layout: fixed; }
+
+@media (max-width: 900px) {
+  .admin-container { grid-template-columns: 1fr; padding: 12px; }
+  .admin-sidebar { position: relative; min-height: auto; top: 0; }
+  .admin-main { grid-template-columns: 1fr; }
+}
+
+.panel {
+  background: white;
+  border-radius: 8px;
+  padding: 14px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.04);
+  border: 1px solid rgba(2,6,23,0.03);
+}
+
+.panel h4 { margin: 0 0 10px 0; color: #0f172a; }
+
+.panel-grid { display: grid; gap: 10px; }
+
+.panel .action { padding: 12px; border-radius: 8px; background: #f8fafc; color: #0f172a; }
+
+.admin-table table { width: 100%; border-collapse: collapse; }
+.admin-table th, .admin-table td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #eef2f7; }
+.admin-table thead th { color: #0f172a; font-weight: 600; }
+.admin-table tbody tr:hover { background: #fbfcfe; }
+
+.btn-group { display:flex; gap:8px; }
+.btn.primary { background: #0ea5e9; color: white; padding: 8px 12px; border-radius: 8px; border:none; }
+.btn.ghost { background: transparent; border: 1px solid #e6eef6; color: #0f172a; padding: 8px 12px; border-radius:8px; }
+
+@media (max-width: 900px) {
+  .admin-actions-row { grid-template-columns: repeat(2,1fr); }
+  .admin-main { grid-template-columns: 1fr; }
+}
+

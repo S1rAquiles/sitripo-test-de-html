@@ -89,4 +89,22 @@ router.get('/auth/me', verifyToken, async (req, res) => {
   }
 });
 
+// Obtener solicitudes del usuario autenticado
+router.get('/auth/solicitudes', verifyToken, async (req, res) => {
+  try {
+    const [rows] = await pool.query(
+      `SELECT s.id, s.estatus, s.fecha_solicitud, s.fecha_cita, s.archivos_json, s.datos_formulario, a.titulo AS ayuda
+         FROM solicitudes s
+         JOIN ayudas a ON a.id = s.ayuda_id
+        WHERE s.usuario_id = ?
+        ORDER BY s.fecha_solicitud DESC`,
+      [req.user.id]
+    );
+    res.json(rows);
+  } catch (err) {
+    console.error('Error GET /auth/solicitudes', err);
+    res.status(500).json({ error: 'Error al obtener solicitudes' });
+  }
+});
+
 module.exports = router;
